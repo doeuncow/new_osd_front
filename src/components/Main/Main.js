@@ -5,6 +5,12 @@ import { Grid, Icon } from "semantic-ui-react";
 import ContentBox from "components/Commons/ContentBox";
 import StyleGuide from "StyleGuide";
 import ScrollTopDesignContainer from "containers/Commons/ScrollTopDesignContainer";
+import MyDesignContainer from "containers/MyPage/MyDesignContainer";
+import MyGroupContainer from "containers/MyPage/MyGroupContainer";
+import MemberDesignContainer from "containers/MyPage/MemberDesignContainer";
+import MyLikeDesignContainer from "containers/MyPage/MyLikeDesignContainer";
+import MyLikeDesignerContainer from "containers/MyPage/MyLikeDesignerContainer";
+import GetMyDetailRequest from "actions/Users/MyDetail.js"
 import MainSlide from "./Slide";
 
 
@@ -39,7 +45,32 @@ const Head = styled.div`
 
 
 class Main extends Component {
+  state = {
+    profile: false,
+    active: false,
+    keyword: null
+  };
+
   render() {
+    const LoginNav = () => {
+      return (
+        <div>
+          <Head>내 그룹</Head>
+            <MyGroupContainer token={this.props.token}/>
+          <br/>
+
+          <Head>내 디자인</Head>
+            <MyDesignContainer token={this.props.token}/>
+          <br/>
+
+          <Head>내가 관심있는 디자인</Head>
+            <MyLikeDesignContainer token={this.props.token}/>
+          <br/>
+
+        </div>
+      );
+    };
+
     return (
       <div>
         <ImgWrapper>
@@ -48,7 +79,8 @@ class Main extends Component {
         <TextWrapper>
           <Content>
             <Wrapper>
-              <Head>추천 디자인</Head>
+              {this.props.valid ? <LoginNav /> : <div />}
+              <Head>인기 디자인</Head>
               <ScrollTopDesignContainer/>
             </Wrapper>
           </Content>
@@ -59,7 +91,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-
-
-

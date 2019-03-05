@@ -16,9 +16,9 @@ class MyLikeDesignContainer extends Component {
   render() {
     return(
       <ScrollList getListRequest={this.getList}
-                  ListComponent={Design}
-                  dataList={this.props.dataList} dataListAdded={this.props.dataListAdded}
-                  mobile={16} tablet={8} computer={8} largeScreen={5} widescreen={2} customClass="largeCustom"/>
+        ListComponent={Design}
+        dataList={this.props.dataList} dataListAdded={this.props.dataListAdded}
+        mobile={16} tablet={8} computer={8} largeScreen={5} widescreen={2} customClass="largeCustom"/>
     );
   }
 }
@@ -26,7 +26,8 @@ class MyLikeDesignContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     dataList: state.MyDetail.status.MyLikeDesign,
-    dataListAdded: state.MyDetail.status.MyLikeDesignAdded
+    dataListAdded: state.MyDetail.status.MyLikeDesignAdded,
+    status: state.MyDetail.status
   };
 };
 
