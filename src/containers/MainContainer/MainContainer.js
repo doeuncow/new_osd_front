@@ -23,7 +23,8 @@ const mapStateToProps = (state) => {
     valid: state.Authentication.status.valid,
     userInfo: state.Authentication.status.userInfo,
     isActive: state.OpenDesign.isActive,
-    MyDetail: state.MyDetail.status.MyDetail
+    MyDetail: state.MyDetail.status.MyDetail,
+    token: state.Authentication.status.token
   };
 };
 

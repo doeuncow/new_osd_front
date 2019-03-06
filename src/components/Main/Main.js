@@ -10,7 +10,8 @@ import MyGroupContainer from "containers/MyPage/MyGroupContainer";
 import MemberDesignContainer from "containers/MyPage/MemberDesignContainer";
 import MyLikeDesignContainer from "containers/MyPage/MyLikeDesignContainer";
 import MyLikeDesignerContainer from "containers/MyPage/MyLikeDesignerContainer";
-import GetMyDetailRequest from "actions/Users/MyDetail.js"
+import GetMyDetailRequest from "actions/Users/MyDetail.js";
+import MyDetail from "components/Users/MyDetail/MyDetail.js";
 import MainSlide from "./Slide";
 
 
@@ -43,6 +44,8 @@ const Head = styled.div`
   margin-bottom: 1rem;
 `;
 
+const MainInfo = styled.div`
+`;
 
 class Main extends Component {
   state = {
@@ -56,15 +59,21 @@ class Main extends Component {
       return (
         <div>
           <Head>내 그룹</Head>
-            <MyGroupContainer token={this.props.token}/>
+            <MainInfo>
+              <MyGroupContainer token={this.props.token}/>
+            </MainInfo>
           <br/>
 
           <Head>내 디자인</Head>
-            <MyDesignContainer token={this.props.token}/>
+            <MainInfo>
+              <MyDesignContainer token={this.props.token}/>
+            </MainInfo>
           <br/>
 
           <Head>내가 관심있는 디자인</Head>
-            <MyLikeDesignContainer token={this.props.token}/>
+            <MainInfo>
+              <MyLikeDesignContainer token={this.props.token}/>
+            </MainInfo>
           <br/>
 
         </div>

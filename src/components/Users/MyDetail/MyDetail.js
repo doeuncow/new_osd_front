@@ -172,6 +172,8 @@ const MiniContentBox = styled.div`
 class MyDetail extends Component {
   componentWillMount() {
     this.props.GetMyDetailRequest(this.props.token);
+    console.log("this.props.token >> ",this.props);
+
   }
 
   typeChange = e => {
