@@ -13,6 +13,7 @@ import MyLikeDesignerContainer from "containers/MyPage/MyLikeDesignerContainer";
 import GetMyDetailRequest from "actions/Users/MyDetail.js";
 import MyDetail from "components/Users/MyDetail/MyDetail.js";
 import MainSlide from "./Slide";
+import { Button } from "semantic-ui-react";
 
 
 // css styling
@@ -60,19 +61,20 @@ class Main extends Component {
         <div>
           <Head>내 그룹</Head>
             <MainInfo>
-              <MyGroupContainer token={this.props.token}/>
+              <MyGroupContainer className="mygroup" token={this.props.token}/>
             </MainInfo>
+            <Button href="/myPage/content/group"> > </Button>
           <br/>
 
           <Head>내 디자인</Head>
             <MainInfo>
-              <MyDesignContainer token={this.props.token}/>
+              <MyDesignContainer className="mydesign" token={this.props.token}/>
             </MainInfo>
           <br/>
 
           <Head>내가 관심있는 디자인</Head>
             <MainInfo>
-              <MyLikeDesignContainer token={this.props.token}/>
+              <MyLikeDesignContainer className="mylikedesign" token={this.props.token}/>
             </MainInfo>
           <br/>
 
